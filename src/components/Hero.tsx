@@ -19,10 +19,10 @@ const Hero: React.FC = () => {
           
           <Reveal delay={100}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight mb-6">
-              Hi, I'm <span className="text-gradient">Your Name</span>
+              Hi, I'm <span className="text-gradient">Anuj Dixit</span>
               <br />
               <span className="text-3xl md:text-4xl lg:text-5xl">
-                Professional Title
+                Full Stack Developer
               </span>
             </h1>
           </Reveal>
@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
               <div className="absolute inset-0.5 rounded-full bg-background overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7" 
-                  alt="Your Name" 
+                  alt="Anuj Dixit" 
                   className="w-full h-full object-cover"
                 />
               </div>

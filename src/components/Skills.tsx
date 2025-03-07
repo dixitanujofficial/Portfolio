@@ -8,26 +8,26 @@ import { CheckCircle2 } from 'lucide-react';
 const Skills: React.FC = () => {
   const technicalSkills = [
     { label: "JavaScript", percentage: 90 },
-    { label: "React", percentage: 85 },
-    { label: "Node.js", percentage: 80 },
-    { label: "TypeScript", percentage: 75 },
-    { label: "UI/UX Design", percentage: 70 },
-    { label: "Database Management", percentage: 65 },
+    { label: "React", percentage: 88 },
+    { label: "Node.js", percentage: 85 },
+    { label: "TypeScript", percentage: 82 },
+    { label: "HTML/CSS", percentage: 90 },
+    { label: "MongoDB", percentage: 75 },
   ];
 
   const softSkills = [
     "Problem Solving",
     "Communication",
-    "Team Leadership",
+    "Team Collaboration",
     "Time Management",
     "Adaptability",
     "Critical Thinking"
   ];
 
   const certifications = [
-    "Advanced Web Development Certification",
-    "UI/UX Design Professional",
-    "Agile Project Management",
+    "Full Stack Web Development",
+    "React Certified Developer",
+    "Node.js Certification",
     "Cloud Computing Fundamentals"
   ];
 

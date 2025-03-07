@@ -9,23 +9,25 @@ const Footer: React.FC = () => {
       <div className="container">
         <Reveal>
           <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">Your Name</h2>
+            <h2 className="text-2xl font-bold mb-4">Anuj Dixit</h2>
             <p className="text-muted-foreground mb-6 max-w-md mx-auto">
               Creating innovative digital experiences with a focus on elegant design and powerful functionality.
             </p>
             
             <div className="flex justify-center gap-4 mb-8">
               <a 
-                href="mailto:your.email@example.com" 
+                href="mailto:anuj.dixit@example.com" 
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-background text-foreground transition-all-200 hover:bg-primary hover:text-white"
                 aria-label="Email"
               >
                 <Mail size={18} />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/dixit-anuj/" 
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-background text-foreground transition-all-200 hover:bg-primary hover:text-white"
                 aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Linkedin size={18} />
               </a>
@@ -39,7 +41,7 @@ const Footer: React.FC = () => {
             </div>
             
             <div className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Your Name. All rights reserved.
+              © {new Date().getFullYear()} Anuj Dixit. All rights reserved.
             </div>
           </div>
         </Reveal>

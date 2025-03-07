@@ -30,32 +30,32 @@ const About: React.FC = () => {
           <div className="lg:col-span-7">
             <Reveal delay={100}>
               <h3 className="text-2xl font-bold mb-4">
-                I'm <span className="text-gradient">Your Name</span>, a Professional Title
+                I'm <span className="text-gradient">Anuj Dixit</span>, a Full Stack Developer
               </h3>
             </Reveal>
             
             <Reveal delay={200}>
               <p className="text-muted-foreground mb-4">
-                I am a passionate and creative professional with a strong background in my field. I specialize in creating elegant solutions to complex problems.
+                I am a passionate and creative full stack developer with a strong background in building web applications. I specialize in creating elegant solutions to complex problems.
               </p>
             </Reveal>
             
             <Reveal delay={300}>
               <p className="text-muted-foreground mb-6">
-                With 5+ years of experience, I've worked on a variety of projects that have honed my skills and expanded my expertise. I'm constantly learning and adapting to new technologies and methodologies to stay at the forefront of my industry.
+                With several years of experience, I've worked on a variety of projects that have honed my skills and expanded my expertise. I'm constantly learning and adapting to new technologies and methodologies to stay at the forefront of my industry.
               </p>
             </Reveal>
             
             <Reveal delay={400}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 <div>
-                  <p className="mb-1"><strong>Name:</strong> Your Name</p>
-                  <p className="mb-1"><strong>Email:</strong> your.email@example.com</p>
-                  <p><strong>Location:</strong> Your City, Country</p>
+                  <p className="mb-1"><strong>Name:</strong> Anuj Dixit</p>
+                  <p className="mb-1"><strong>Email:</strong> anuj.dixit@example.com</p>
+                  <p><strong>Location:</strong> India</p>
                 </div>
                 <div>
-                  <p className="mb-1"><strong>Age:</strong> Your Age</p>
                   <p className="mb-1"><strong>Experience:</strong> 5+ Years</p>
+                  <p className="mb-1"><strong>Degree:</strong> B.Tech</p>
                   <p><strong>Availability:</strong> Freelance/Full-time</p>
                 </div>
               </div>
@@ -72,16 +72,18 @@ const About: React.FC = () => {
                 </a>
                 <div className="flex items-center gap-3">
                   <a 
-                    href="mailto:your.email@example.com" 
+                    href="mailto:anuj.dixit@example.com" 
                     className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-foreground transition-all-200 hover:bg-primary hover:text-white"
                     aria-label="Email"
                   >
                     <Mail size={18} />
                   </a>
                   <a 
-                    href="#" 
+                    href="https://www.linkedin.com/in/dixit-anuj/" 
                     className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-foreground transition-all-200 hover:bg-primary hover:text-white"
                     aria-label="LinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Linkedin size={18} />
                   </a>

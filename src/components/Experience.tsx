@@ -7,27 +7,27 @@ const Experience: React.FC = () => {
   const experiences = [
     {
       date: "2021 - Present",
-      title: "Senior Position",
-      company: "Company Name",
-      description: "Led the development of key projects, mentored junior team members, and improved processes to increase team productivity by 30%."
+      title: "Full Stack Developer",
+      company: "Current Company",
+      description: "Leading the development of key web applications, mentoring team members, and implementing CI/CD processes to improve development workflow."
     },
     {
       date: "2019 - 2021",
-      title: "Mid-level Position",
-      company: "Company Name",
-      description: "Collaborated on major projects, implemented new technologies, and contributed to significant improvements in product performance and user experience."
+      title: "Software Developer",
+      company: "Previous Company",
+      description: "Collaborated on major projects, implemented new technologies, and contributed to significant improvements in application performance and user experience."
     },
     {
       date: "2017 - 2019",
-      title: "Junior Position",
-      company: "Company Name",
+      title: "Junior Developer",
+      company: "First Company",
       description: "Assisted with development tasks, learned company processes, and began contributing to product features while rapidly expanding my technical skills."
     },
     {
       date: "2013 - 2017",
-      title: "University Degree",
-      company: "University Name",
-      description: "Studied relevant field, participated in extracurricular activities, and completed several notable projects that demonstrated practical skills."
+      title: "B.Tech in Computer Science",
+      company: "University",
+      description: "Studied Computer Science and Engineering, participated in coding competitions, and completed several notable projects that demonstrated practical skills."
     }
   ];
 

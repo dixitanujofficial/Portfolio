@@ -6,34 +6,34 @@ import ProjectCard from './ui/ProjectCard';
 const Projects: React.FC = () => {
   const projects = [
     {
-      title: "Project One",
-      description: "A comprehensive solution that addressed key challenges and delivered exceptional results for the client.",
+      title: "E-commerce Platform",
+      description: "A full-featured online shopping platform with user authentication, product catalog, cart management, and payment integration.",
       image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
-      tags: ["React", "TypeScript", "Tailwind CSS"],
+      tags: ["React", "Node.js", "MongoDB", "Express"],
       demoLink: "#",
       githubLink: "#"
     },
     {
-      title: "Project Two",
-      description: "An innovative application that streamlined processes and improved user engagement metrics.",
+      title: "Task Management App",
+      description: "A productivity application that helps users organize tasks, set deadlines, and track progress on personal and team projects.",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-      tags: ["Next.js", "Node.js", "MongoDB"],
+      tags: ["Next.js", "TypeScript", "Firebase", "Tailwind CSS"],
       demoLink: "#",
       githubLink: "#"
     },
     {
-      title: "Project Three",
-      description: "A creative solution that incorporated cutting-edge technologies and resulted in significant business improvements.",
+      title: "Real-time Chat Application",
+      description: "A messaging platform with real-time communication, user profiles, file sharing, and notification system.",
       image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
-      tags: ["Vue.js", "Express", "PostgreSQL"],
+      tags: ["React", "Socket.io", "Express", "MongoDB"],
       demoLink: "#",
       githubLink: "#"
     },
     {
-      title: "Project Four",
-      description: "A user-centered design that focused on accessibility and resulted in a 40% increase in user satisfaction.",
+      title: "Portfolio Website",
+      description: "A responsive and interactive personal portfolio showcasing skills, experience, and projects with modern design elements.",
       image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
-      tags: ["React Native", "Firebase", "Redux"],
+      tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
       demoLink: "#",
       githubLink: "#"
     }
