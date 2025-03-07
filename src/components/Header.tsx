@@ -26,19 +26,6 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    // Close mobile menu when clicking outside
-    const handleClickOutside = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (isOpen && !target.closest('nav') && !target.closest('button')) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
-  }, [isOpen]);
-
   // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isOpen) {
@@ -74,7 +61,7 @@ const Header: React.FC = () => {
         </a>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-8">
           <ul className="flex items-center gap-8">
             {navItems.map((item) => (
               <li key={item.href}>
@@ -97,16 +84,16 @@ const Header: React.FC = () => {
         </nav>
 
         {/* Mobile Menu Button and Theme Toggle */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <button 
             onClick={toggleTheme}
-            className="relative z-10 w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+            className="relative z-50 w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
             aria-label="Toggle theme"
           >
             {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
           </button>
           <button
-            className="relative z-10 w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+            className="relative z-50 w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -117,16 +104,16 @@ const Header: React.FC = () => {
         {/* Mobile Menu Overlay */}
         <div
           className={cn(
-            "fixed inset-0 bg-background/95 dark:bg-background/98 backdrop-blur-sm md:hidden z-0 transition-all-300 flex flex-col items-center justify-center",
+            "fixed inset-0 bg-background/98 dark:bg-background/98 backdrop-blur-md lg:hidden transition-all duration-300 ease-in-out",
             isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           )}
         >
-          <nav className="flex flex-col items-center gap-6">
+          <nav className="flex flex-col items-center justify-center min-h-screen">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-2xl font-bold py-2 transition-all-200 hover:text-primary"
+                className="text-2xl font-bold py-4 transition-colors hover:text-primary"
                 onClick={closeMenu}
               >
                 {item.label}

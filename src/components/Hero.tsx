@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import Reveal from './ui/Reveal';
@@ -57,7 +56,7 @@ const Hero: React.FC = () => {
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-blue-400 opacity-75 blur-md"></div>
               <div className="absolute inset-0.5 rounded-full bg-background overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7" 
+                  src="/lovable-uploads/6ff60f4d-f10d-4af4-b00a-0e3c3a16ada2.png"
                   alt="Anuj Dixit" 
                   className="w-full h-full object-cover"
                 />
