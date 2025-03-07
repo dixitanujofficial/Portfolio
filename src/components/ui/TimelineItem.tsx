@@ -26,8 +26,8 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         direction={index % 2 === 0 ? 'left' : 'right'} 
         delay={index * 100}
       >
-        <div className="absolute left-0 top-2 h-4 w-4 rounded-full bg-primary -translate-x-1/2 z-10"></div>
-        <div className="mb-1 text-sm font-semibold text-primary">{date}</div>
+        <div className="absolute left-0 top-2 h-4 w-4 rounded-full bg-primary dark:bg-primary -translate-x-1/2 z-10"></div>
+        <div className="mb-1 text-sm font-semibold text-primary dark:text-primary">{date}</div>
         <h3 className="text-xl font-bold">{title}</h3>
         <div className="text-muted-foreground font-medium mb-2">{company}</div>
         <p className="text-muted-foreground">{description}</p>

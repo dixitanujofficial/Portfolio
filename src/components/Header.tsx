@@ -1,15 +1,21 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useTheme } from '@/context/ThemeProvider';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   const toggleMenu = () => setIsOpen(!isOpen);
   
   const closeMenu = () => setIsOpen(false);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +25,32 @@ const Header: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Close mobile menu when clicking outside
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (isOpen && !target.closest('nav') && !target.closest('button')) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isOpen]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   const navItems = [
     { label: 'Home', href: '#home' },
@@ -33,7 +65,7 @@ const Header: React.FC = () => {
     <header 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all-300 py-5",
-        scrolled || isOpen ? "bg-background/80 backdrop-blur border-b" : "bg-transparent"
+        scrolled || isOpen ? "bg-background/80 dark:bg-background/90 backdrop-blur border-b" : "bg-transparent"
       )}
     >
       <div className="container flex items-center justify-between">
@@ -42,7 +74,7 @@ const Header: React.FC = () => {
         </a>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:block">
+        <nav className="hidden md:flex items-center gap-8">
           <ul className="flex items-center gap-8">
             {navItems.map((item) => (
               <li key={item.href}>
@@ -55,25 +87,41 @@ const Header: React.FC = () => {
               </li>
             ))}
           </ul>
+          <button 
+            onClick={toggleTheme}
+            className="w-10 h-10 rounded-full flex items-center justify-center bg-primary/10 hover:bg-primary/20 transition-colors"
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="block md:hidden relative z-10 text-foreground"
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile Menu Button and Theme Toggle */}
+        <div className="flex items-center gap-2 md:hidden">
+          <button 
+            onClick={toggleTheme}
+            className="relative z-10 w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          <button
+            className="relative z-10 w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
 
         {/* Mobile Menu Overlay */}
         <div
           className={cn(
-            "fixed inset-0 bg-background backdrop-blur md:hidden z-0 transition-all-300 flex flex-col items-center justify-center",
+            "fixed inset-0 bg-background/95 dark:bg-background/98 backdrop-blur-sm md:hidden z-0 transition-all-300 flex flex-col items-center justify-center",
             isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           )}
         >
-          <nav className="flex flex-col items-center gap-5">
+          <nav className="flex flex-col items-center gap-6">
             {navItems.map((item) => (
               <a
                 key={item.href}
