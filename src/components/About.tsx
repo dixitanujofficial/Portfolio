@@ -30,19 +30,19 @@ const About: React.FC = () => {
           <div className="lg:col-span-7">
             <Reveal delay={100}>
               <h3 className="text-2xl font-bold mb-4">
-                I'm <span className="text-gradient">Anuj Dixit</span>, a Full Stack Developer
+                I'm <span className="text-gradient">Anuj Dixit</span>, a Full Stack Web Developer
               </h3>
             </Reveal>
             
             <Reveal delay={200}>
               <p className="text-muted-foreground mb-4">
-                I am a passionate and creative full stack developer with a strong background in building web applications. I specialize in creating elegant solutions to complex problems.
+                I'm passionate about web development, currently pursuing a Bachelor of Computer Applications (BCA) at K.P.B. Hinduja College of Commerce (Mumbai) and a Bachelor of Science in Data Science and Applications at IIT Madras.
               </p>
             </Reveal>
             
             <Reveal delay={300}>
               <p className="text-muted-foreground mb-6">
-                With several years of experience, I've worked on a variety of projects that have honed my skills and expanded my expertise. I'm constantly learning and adapting to new technologies and methodologies to stay at the forefront of my industry.
+                I've completed an intensive learning journey in frontend web development, mastering HTML, CSS, and JavaScript along with frameworks like Bootstrap and Tailwind CSS. Currently focusing on backend development with the MERN stack (MongoDB, Express.js, React.js, Node.js), I aim to build seamless full-stack applications that prioritize functionality and user experience.
               </p>
             </Reveal>
             
@@ -50,13 +50,13 @@ const About: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 <div>
                   <p className="mb-1"><strong>Name:</strong> Anuj Dixit</p>
-                  <p className="mb-1"><strong>Email:</strong> anuj.dixit@example.com</p>
-                  <p><strong>Location:</strong> India</p>
+                  <p className="mb-1"><strong>Email:</strong> dixitanujofficial@gmail.com</p>
+                  <p><strong>Location:</strong> Mumbai, Maharashtra, India</p>
                 </div>
                 <div>
-                  <p className="mb-1"><strong>Experience:</strong> 5+ Years</p>
-                  <p className="mb-1"><strong>Degree:</strong> B.Tech</p>
-                  <p><strong>Availability:</strong> Freelance/Full-time</p>
+                  <p className="mb-1"><strong>Education:</strong> BCA & BS Data Science</p>
+                  <p className="mb-1"><strong>Focus:</strong> MERN Stack Development</p>
+                  <p><strong>Availability:</strong> Projects/Internships</p>
                 </div>
               </div>
             </Reveal>
@@ -72,7 +72,7 @@ const About: React.FC = () => {
                 </a>
                 <div className="flex items-center gap-3">
                   <a 
-                    href="mailto:anuj.dixit@example.com" 
+                    href="mailto:dixitanujofficial@gmail.com" 
                     className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-foreground transition-all-200 hover:bg-primary hover:text-white"
                     aria-label="Email"
                   >
@@ -88,7 +88,7 @@ const About: React.FC = () => {
                     <Linkedin size={18} />
                   </a>
                   <a 
-                    href="#" 
+                    href="https://github.com/anujdixit" 
                     className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-foreground transition-all-200 hover:bg-primary hover:text-white"
                     aria-label="GitHub"
                   >

@@ -11,12 +11,12 @@ const Footer: React.FC = () => {
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-4">Anuj Dixit</h2>
             <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-              Creating innovative digital experiences with a focus on elegant design and powerful functionality.
+              BS at IIT Madras | BCA at K.P.B. Hinduja College | Full-stack web developer [MERN]
             </p>
             
             <div className="flex justify-center gap-4 mb-8">
               <a 
-                href="mailto:anuj.dixit@example.com" 
+                href="mailto:dixitanujofficial@gmail.com" 
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-background text-foreground transition-all-200 hover:bg-primary hover:text-white"
                 aria-label="Email"
               >
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
                 <Linkedin size={18} />
               </a>
               <a 
-                href="#" 
+                href="https://github.com/anujdixit" 
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-background text-foreground transition-all-200 hover:bg-primary hover:text-white"
                 aria-label="GitHub"
               >

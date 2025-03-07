@@ -6,34 +6,34 @@ import ProjectCard from './ui/ProjectCard';
 const Projects: React.FC = () => {
   const projects = [
     {
-      title: "E-commerce Platform",
-      description: "A full-featured online shopping platform with user authentication, product catalog, cart management, and payment integration.",
+      title: "MERN E-Commerce Platform",
+      description: "A full-featured online shopping platform with user authentication, product catalog, cart management, and payment integration using the MERN stack.",
       image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
-      tags: ["React", "Node.js", "MongoDB", "Express"],
+      tags: ["React", "Node.js", "MongoDB", "Express", "JWT"],
       demoLink: "#",
       githubLink: "#"
     },
     {
-      title: "Task Management App",
-      description: "A productivity application that helps users organize tasks, set deadlines, and track progress on personal and team projects.",
+      title: "Task Management Application",
+      description: "A productivity application built with React and Node.js that helps users organize tasks, set deadlines, and track progress on personal and team projects.",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-      tags: ["Next.js", "TypeScript", "Firebase", "Tailwind CSS"],
+      tags: ["React", "JavaScript", "Express", "MongoDB", "Tailwind CSS"],
       demoLink: "#",
       githubLink: "#"
     },
     {
-      title: "Real-time Chat Application",
-      description: "A messaging platform with real-time communication, user profiles, file sharing, and notification system.",
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
-      tags: ["React", "Socket.io", "Express", "MongoDB"],
+      title: "Data Visualization Dashboard",
+      description: "An interactive dashboard utilizing React for frontend and Express for backend to visualize complex data sets in an intuitive and user-friendly manner.",
+      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837",
+      tags: ["React", "Express", "Chart.js", "MongoDB", "Tailwind CSS"],
       demoLink: "#",
       githubLink: "#"
     },
     {
-      title: "Portfolio Website",
-      description: "A responsive and interactive personal portfolio showcasing skills, experience, and projects with modern design elements.",
-      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
-      tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      title: "Responsive Portfolio Website",
+      description: "A responsive and interactive personal portfolio showcasing skills, experience, and projects with modern design elements built with React and Tailwind CSS.",
+      image: "https://images.unsplash.com/photo-1649972954973-af87dfaza726",
+      tags: ["React", "JavaScript", "Tailwind CSS", "Responsive Design"],
       demoLink: "#",
       githubLink: "#"
     }
@@ -44,7 +44,7 @@ const Projects: React.FC = () => {
       <div className="container">
         <SectionHeading 
           title="Featured Projects"
-          subtitle="Some of my recent work"
+          subtitle="My recent work with MERN stack"
         />
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">

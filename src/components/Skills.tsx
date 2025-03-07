@@ -8,35 +8,39 @@ import { CheckCircle2 } from 'lucide-react';
 const Skills: React.FC = () => {
   const technicalSkills = [
     { label: "JavaScript", percentage: 90 },
-    { label: "React", percentage: 88 },
-    { label: "Node.js", percentage: 85 },
-    { label: "TypeScript", percentage: 82 },
-    { label: "HTML/CSS", percentage: 90 },
+    { label: "React.js", percentage: 85 },
+    { label: "Node.js", percentage: 80 },
     { label: "MongoDB", percentage: 75 },
+    { label: "Express.js", percentage: 80 },
+    { label: "HTML/CSS", percentage: 90 },
+    { label: "C++", percentage: 85 },
+    { label: "Tailwind CSS", percentage: 88 },
+    { label: "Bootstrap", percentage: 85 },
   ];
 
   const softSkills = [
-    "Problem Solving",
     "Communication",
+    "Problem Solving",
     "Team Collaboration",
+    "Leadership",
     "Time Management",
-    "Adaptability",
     "Critical Thinking"
   ];
 
-  const certifications = [
-    "Full Stack Web Development",
-    "React Certified Developer",
-    "Node.js Certification",
-    "Cloud Computing Fundamentals"
+  const learningTechnologies = [
+    "Advanced React Patterns",
+    "Next.js",
+    "Data Science",
+    "Machine Learning Basics",
+    "Database Management"
   ];
 
   return (
     <section id="skills" className="section-padding bg-secondary/50">
       <div className="container">
         <SectionHeading 
-          title="Skills & Certifications"
-          subtitle="My technical expertise and qualifications"
+          title="Skills & Expertise"
+          subtitle="My technical and soft skills"
         />
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -56,7 +60,7 @@ const Skills: React.FC = () => {
             </div>
           </Reveal>
 
-          {/* Soft Skills & Certifications */}
+          {/* Soft Skills & Currently Learning */}
           <div className="space-y-8">
             {/* Soft Skills */}
             <Reveal delay={200}>
@@ -73,15 +77,15 @@ const Skills: React.FC = () => {
               </div>
             </Reveal>
 
-            {/* Certifications */}
+            {/* Currently Learning */}
             <Reveal delay={400}>
               <div className="bg-card rounded-lg p-6 subtle-shadow">
-                <h3 className="text-xl font-bold mb-6">Certifications</h3>
+                <h3 className="text-xl font-bold mb-6">Currently Learning</h3>
                 <div className="space-y-3">
-                  {certifications.map((cert, index) => (
+                  {learningTechnologies.map((tech, index) => (
                     <div key={index} className="flex items-center gap-2">
                       <div className="h-2 w-2 rounded-full bg-primary"></div>
-                      <span>{cert}</span>
+                      <span>{tech}</span>
                     </div>
                   ))}
                 </div>

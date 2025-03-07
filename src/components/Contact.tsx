@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
       <div className="container">
         <SectionHeading 
           title="Get in Touch"
-          subtitle="Let's discuss your project"
+          subtitle="Let's discuss your project or opportunity"
         />
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-6xl mx-auto">
@@ -57,8 +57,8 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Email</h4>
-                    <a href="mailto:your.email@example.com" className="text-muted-foreground hover:text-primary transition-colors">
-                      your.email@example.com
+                    <a href="mailto:dixitanujofficial@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                      dixitanujofficial@gmail.com
                     </a>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Location</h4>
-                    <p className="text-muted-foreground">Your City, Country</p>
+                    <p className="text-muted-foreground">Mumbai, Maharashtra, India</p>
                   </div>
                 </div>
                 
@@ -78,9 +78,9 @@ const Contact: React.FC = () => {
                     <Phone className="text-primary" size={24} />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Phone</h4>
-                    <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors">
-                      +1 (234) 567-890
+                    <h4 className="font-semibold mb-1">LinkedIn</h4>
+                    <a href="https://www.linkedin.com/in/dixit-anuj/" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                      linkedin.com/in/dixit-anuj
                     </a>
                   </div>
                 </div>
