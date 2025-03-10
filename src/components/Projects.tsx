@@ -2,40 +2,38 @@
 import React from 'react';
 import SectionHeading from './ui/SectionHeading';
 import ProjectCard from './ui/ProjectCard';
+import { Clock } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const projects = [
     {
-      title: "MERN E-Commerce Platform",
-      description: "A full-featured online shopping platform with user authentication, product catalog, cart management, and payment integration using the MERN stack.",
-      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
-      tags: ["React", "Node.js", "MongoDB", "Express", "JWT"],
-      demoLink: "#",
+      title: "Wanderlust",
+      description: "A cutting-edge travel platform inspired by Airbnb. Features include secure authentication, map integration, MVC architecture, and intuitive UI built with MongoDB, Express.js, Node.js, and Bootstrap.",
+      image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop",
+      tags: ["MongoDB", "Express.js", "Node.js", "Bootstrap", "MVC"],
+      demoLink: "https://wanderlust-1isu.onrender.com/listings",
       githubLink: "#"
     },
     {
-      title: "Task Management Application",
-      description: "A productivity application built with React and Node.js that helps users organize tasks, set deadlines, and track progress on personal and team projects.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-      tags: ["React", "JavaScript", "Express", "MongoDB", "Tailwind CSS"],
-      demoLink: "#",
-      githubLink: "#"
+      title: "Coming Soon",
+      description: "An exciting new project currently in development. Stay tuned for updates on this innovative solution.",
+      image: "https://images.unsplash.com/photo-1589149098258-3b71a54d8bdc?q=80&w=2039&auto=format&fit=crop",
+      tags: ["React", "Next.js", "TypeScript"],
+      isComingSoon: true
     },
     {
-      title: "Data Visualization Dashboard",
-      description: "An interactive dashboard utilizing React for frontend and Express for backend to visualize complex data sets in an intuitive and user-friendly manner.",
-      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837",
-      tags: ["React", "Express", "Chart.js", "MongoDB", "Tailwind CSS"],
-      demoLink: "#",
-      githubLink: "#"
+      title: "Coming Soon",
+      description: "Another innovative project on the horizon. More details will be revealed in the near future.",
+      image: "https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81?q=80&w=2080&auto=format&fit=crop",
+      tags: ["MERN Stack", "Tailwind CSS"],
+      isComingSoon: true
     },
     {
-      title: "Responsive Portfolio Website",
-      description: "A responsive and interactive personal portfolio showcasing skills, experience, and projects with modern design elements built with React and Tailwind CSS.",
-      image: "https://images.unsplash.com/photo-1649972954973-af87dfaza726",
-      tags: ["React", "JavaScript", "Tailwind CSS", "Responsive Design"],
-      demoLink: "#",
-      githubLink: "#"
+      title: "Coming Soon",
+      description: "A futuristic application currently under construction. Watch this space for the official launch.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
+      tags: ["React", "Firebase", "Material UI"],
+      isComingSoon: true
     }
   ];
 
@@ -44,7 +42,7 @@ const Projects: React.FC = () => {
       <div className="container">
         <SectionHeading 
           title="Featured Projects"
-          subtitle="My recent work with MERN stack"
+          subtitle="My recent work and upcoming initiatives"
         />
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
@@ -57,6 +55,7 @@ const Projects: React.FC = () => {
               tags={project.tags}
               demoLink={project.demoLink}
               githubLink={project.githubLink}
+              isComingSoon={project.isComingSoon}
             />
           ))}
         </div>
