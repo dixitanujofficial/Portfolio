@@ -51,7 +51,7 @@ const Header: React.FC = () => {
   return (
     <header 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all-300 py-5",
+        "fixed top-0 left-0 right-0 z-50 transition-all-300 py-3 md:py-5",
         scrolled || isOpen ? "bg-background/80 dark:bg-background/90 backdrop-blur border-b" : "bg-transparent"
       )}
     >
@@ -87,24 +87,24 @@ const Header: React.FC = () => {
         <div className="flex items-center gap-2 lg:hidden">
           <button 
             onClick={toggleTheme}
-            className="relative z-50 w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+            className="relative z-50 w-9 h-9 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
             aria-label="Toggle theme"
           >
-            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
           </button>
           <button
-            className="relative z-50 w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+            className="relative z-50 w-9 h-9 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
+            {isOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
 
         {/* Mobile Menu Overlay */}
         <div
           className={cn(
-            "fixed inset-0 bg-background/98 dark:bg-background/98 backdrop-blur-md lg:hidden transition-all duration-300 ease-in-out",
+            "fixed inset-0 bg-background/90 dark:bg-background/95 backdrop-blur-lg lg:hidden transition-all duration-300 ease-in-out",
             isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           )}
         >
@@ -113,7 +113,7 @@ const Header: React.FC = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-2xl font-bold py-4 transition-colors hover:text-primary"
+                className="text-xl font-bold py-3 transition-colors hover:text-primary"
                 onClick={closeMenu}
               >
                 {item.label}
