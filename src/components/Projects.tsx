@@ -2,7 +2,6 @@
 import React from 'react';
 import SectionHeading from './ui/SectionHeading';
 import ProjectCard from './ui/ProjectCard';
-import { Clock } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const projects = [
@@ -17,7 +16,7 @@ const Projects: React.FC = () => {
     {
       title: "Coming Soon",
       description: "An exciting new project currently in development. Stay tuned for updates on this innovative solution.",
-      image: "https://images.unsplash.com/photo-1589149098258-3b71a54d8bdc?q=80&w=2039&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2070&auto=format&fit=crop",
       tags: ["React", "Next.js", "TypeScript"],
       isComingSoon: true
     },
