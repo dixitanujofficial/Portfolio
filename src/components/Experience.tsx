@@ -12,10 +12,10 @@ const Experience: React.FC = () => {
       description: "Pursuing Computer Science with a focus on application development and programming fundamentals. Developing strong technical foundation in computer science principles."
     },
     {
-      date: "2022 - 2024",
+      date: "2024 - 2028",
       title: "Bachelor of Science - BS",
       company: "Indian Institute of Technology, Madras",
-      description: "Specializing in Data Science and Applications. Expected graduation in September 2024. Learning advanced concepts in data science, machine learning, and statistical analysis."
+      description: "Specializing in Data Science and Applications. Started in September 2024 with expected graduation in 2028. Learning advanced concepts in data science, machine learning, and statistical analysis."
     },
     {
       date: "2023 - Present",
