@@ -32,24 +32,31 @@ const Experience: React.FC = () => {
   ];
 
   return (
-    <section id="experience" className="section-padding bg-secondary/50">
+    <section id="experience" className="section-padding bg-secondary/30 dark:bg-secondary/10">
       <div className="container">
         <SectionHeading 
           title="Education & Experience"
           subtitle="My academic and learning journey"
+          className="mb-12"
         />
         
-        <div className="max-w-3xl mx-auto">
-          {experiences.map((exp, index) => (
-            <TimelineItem
-              key={index}
-              date={exp.date}
-              title={exp.title}
-              company={exp.company}
-              description={exp.description}
-              index={index}
-            />
-          ))}
+        <div className="relative max-w-5xl mx-auto">
+          {/* Mobile Timeline Line (hidden on desktop) */}
+          <div className="absolute left-2 top-5 bottom-0 w-px bg-border md:hidden"></div>
+          
+          {/* Timeline Items */}
+          <div className="pl-10 md:pl-0">
+            {experiences.map((exp, index) => (
+              <TimelineItem
+                key={index}
+                date={exp.date}
+                title={exp.title}
+                company={exp.company}
+                description={exp.description}
+                index={index}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

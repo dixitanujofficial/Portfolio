@@ -52,7 +52,9 @@ const Header: React.FC = () => {
     <header 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all-300 py-3 md:py-5",
-        scrolled || isOpen ? "bg-background/80 dark:bg-background/90 backdrop-blur border-b" : "bg-transparent"
+        scrolled || isOpen 
+          ? "bg-background/70 dark:bg-background/80 backdrop-blur-md border-b" 
+          : "bg-transparent"
       )}
     >
       <div className="container flex items-center justify-between">
@@ -104,7 +106,7 @@ const Header: React.FC = () => {
         {/* Mobile Menu Overlay */}
         <div
           className={cn(
-            "fixed inset-0 bg-background/90 dark:bg-background/95 backdrop-blur-lg lg:hidden transition-all duration-300 ease-in-out",
+            "fixed inset-0 bg-background/60 dark:bg-background/70 backdrop-blur-xl lg:hidden transition-all duration-300 ease-in-out",
             isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           )}
         >
