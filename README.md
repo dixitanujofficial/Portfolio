@@ -21,9 +21,9 @@ Welcome to my **personal portfolio**! This project represents my journey as a **
 - **CSS (Tailwind)** – 1.5%  
 - **Other** – 0.7%  
 
-🚀 Live Preview
-Check out the live version here:
-🔗 anujdixitportfolio.netlify.app
+## 🚀 Live Preview  
+Check out my portfolio here:  
+🔗 **[Live Portfolio](https://anujdixitportfolio.netlify.app/)**
 
 
 
