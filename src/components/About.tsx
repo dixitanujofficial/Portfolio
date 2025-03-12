@@ -17,7 +17,7 @@ const About: React.FC = () => {
               <div className="rounded-lg overflow-hidden subtle-shadow relative">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent z-10 rounded-3xl"></div>
                 <img
-                  src="https://unsplash.com/photos/flat-screen-monitor-and-black-ceramic-mug-vc3iVL_znJ8"
+                  src="./anuj-portfolio/public/lovable-uploads/aboutme.jpg"
                   alt="About Me"
                   className="w-full h-full object-cover"
                 />
