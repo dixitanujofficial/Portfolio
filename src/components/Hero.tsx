@@ -22,14 +22,14 @@ const Hero: React.FC = () => {
               Hi, I'm <span className="text-gradient">Anuj Dixit</span>
               <br />
               <span className="text-3xl md:text-4xl lg:text-5xl">
-                Full Stack Web Developer
+                Full Stack Developer & AI Enthusiast
               </span>
             </h1>
           </Reveal>
           
           <Reveal delay={200}>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
-              BS Data Science at IIT Madras with a complementary BCA at K.P.B. Hinduja College. Specializing in MERN Stack development with a focus on creating sophisticated, high-performance web applications.
+              BS Data Science at IIT Madras with a complementary BCA at K.P.B. Hinduja College. Specializing in MERN Stack development and exploring AI technologies to build innovative, high-performance applications.
             </p>
           </Reveal>
           

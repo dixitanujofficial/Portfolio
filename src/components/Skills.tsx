@@ -9,13 +9,14 @@ const Skills: React.FC = () => {
   const technicalSkills = [
     { label: "JavaScript", percentage: 90 },
     { label: "React.js", percentage: 85 },
-    { label: "Node.js", percentage: 80 },
-    { label: "MongoDB", percentage: 75 },
-    { label: "Express.js", percentage: 80 },
+    { label: "Node.js", percentage: 85 },
+    { label: "MongoDB", percentage: 80 },
+    { label: "Express.js", percentage: 85 },
     { label: "HTML/CSS", percentage: 90 },
     { label: "C++", percentage: 85 },
-    { label: "Tailwind CSS", percentage: 88 },
+    { label: "Tailwind CSS", percentage: 90 },
     { label: "Bootstrap", percentage: 85 },
+    { label: "Full Stack Development", percentage: 85 },
   ];
 
   const softSkills = [
@@ -24,15 +25,17 @@ const Skills: React.FC = () => {
     "Team Collaboration",
     "Leadership",
     "Time Management",
-    "Critical Thinking"
+    "Critical Thinking",
+    "Adaptability"
   ];
 
   const learningTechnologies = [
-    "Advanced React Patterns",
-    "Next.js",
-    "Data Science",
-    "Machine Learning Basics",
-    "Database Management"
+    "Artificial Intelligence",
+    "Large Language Models",
+    "Machine Learning",
+    "Natural Language Processing",
+    "Data Science Fundamentals",
+    "AI Application Development"
   ];
 
   return (
