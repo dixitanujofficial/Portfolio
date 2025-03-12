@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import SectionHeading from './ui/SectionHeading';
 import Reveal from './ui/Reveal';
@@ -5,7 +6,7 @@ import { Mail, MapPin, Phone, Send, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import emailjs from 'emailjs-com';
 
-emailjs.init("YOUR_USER_ID"); // Replace with your actual EmailJS user ID
+emailjs.init("OfsfQlX0jqBEvDR8o"); // Your EmailJS user ID
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -24,8 +25,8 @@ const Contact: React.FC = () => {
     try {
       // Send email using EmailJS
       const response = await emailjs.send(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        "service_2g5sji5", // Your EmailJS service ID
+        "template_q0e6hak", // Your EmailJS template ID
         {
           from_name: formData.name,
           from_email: formData.email,
