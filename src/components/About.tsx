@@ -88,9 +88,11 @@ const About: React.FC = () => {
                     <Linkedin size={18} />
                   </a>
                   <a 
-                    href="https://github.com/anujdixit" 
+                    href="https://github.com/dixitanujofficial" 
                     className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-foreground transition-all-200 hover:bg-primary hover:text-white"
                     aria-label="GitHub"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Github size={18} />
                   </a>
