@@ -1,28 +1,18 @@
-
 import React from 'react';
 import SectionHeading from './ui/SectionHeading';
 import Reveal from './ui/Reveal';
 import { Download, Mail, Linkedin, Github } from 'lucide-react';
-
 const About: React.FC = () => {
-  return (
-    <section id="about" className="section-padding bg-background">
+  return <section id="about" className="section-padding bg-background">
       <div className="container">
-        <SectionHeading 
-          title="About Me"
-          subtitle="Professional background and expertise"
-        />
+        <SectionHeading title="About Me" subtitle="Professional background and expertise" />
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5">
             <Reveal>
               <div className="rounded-lg overflow-hidden subtle-shadow relative">
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent z-10"></div>
-                <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
-                  alt="About Me" 
-                  className="w-full h-full object-cover"
-                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent z-10 rounded-3xl"></div>
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" alt="About Me" className="w-full h-full object-cover" />
               </div>
             </Reveal>
           </div>
@@ -63,37 +53,18 @@ const About: React.FC = () => {
             
             <Reveal delay={500}>
               <div className="flex flex-wrap gap-4">
-                <a 
-                  href="#" 
-                  className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-medium transition-all-200 hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-1"
-                >
+                <a href="#" className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-medium transition-all-200 hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-1">
                   <Download size={18} />
                   Download CV
                 </a>
                 <div className="flex items-center gap-3">
-                  <a 
-                    href="mailto:dixitanujofficial@gmail.com" 
-                    className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-foreground transition-all-200 hover:bg-primary hover:text-white"
-                    aria-label="Email"
-                  >
+                  <a href="mailto:dixitanujofficial@gmail.com" className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-foreground transition-all-200 hover:bg-primary hover:text-white" aria-label="Email">
                     <Mail size={18} />
                   </a>
-                  <a 
-                    href="https://www.linkedin.com/in/dixit-anuj/" 
-                    className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-foreground transition-all-200 hover:bg-primary hover:text-white"
-                    aria-label="LinkedIn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="https://www.linkedin.com/in/dixit-anuj/" className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-foreground transition-all-200 hover:bg-primary hover:text-white" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                     <Linkedin size={18} />
                   </a>
-                  <a 
-                    href="https://github.com/dixitanujofficial" 
-                    className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-foreground transition-all-200 hover:bg-primary hover:text-white"
-                    aria-label="GitHub"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="https://github.com/dixitanujofficial" className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-foreground transition-all-200 hover:bg-primary hover:text-white" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
                     <Github size={18} />
                   </a>
                 </div>
@@ -102,8 +73,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
