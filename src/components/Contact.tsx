@@ -1,9 +1,11 @@
-
 import React, { useState } from 'react';
 import SectionHeading from './ui/SectionHeading';
 import Reveal from './ui/Reveal';
 import { Mail, MapPin, Phone, Send, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from 'emailjs-com';
+
+emailjs.init("YOUR_USER_ID"); // Replace with your actual EmailJS user ID
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -21,26 +23,19 @@ const Contact: React.FC = () => {
     
     try {
       // Send email using EmailJS
-      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          service_id: 'service_contact_form',
-          template_id: 'template_contact_form',
-          user_id: 'YOUR_USER_ID', // Replace with actual user ID
-          template_params: {
-            from_name: formData.name,
-            from_email: formData.email,
-            subject: formData.subject,
-            message: formData.message,
-            to_email: 'dixitanujofficial@gmail.com'
-          }
-        })
-      });
+      const response = await emailjs.send(
+        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
+        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'dixitanujofficial@gmail.com'
+        }
+      );
       
-      if (response.ok) {
+      if (response.status === 200) {
         toast({
           title: "Message sent successfully!",
           description: "I'll get back to you as soon as possible.",
@@ -50,6 +45,7 @@ const Contact: React.FC = () => {
         throw new Error('Failed to send message');
       }
     } catch (error) {
+      console.error('Email sending error:', error);
       toast({
         title: "Error sending message",
         description: "Please try again later or contact me directly via email.",
