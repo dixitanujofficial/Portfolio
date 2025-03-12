@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import Reveal from './ui/Reveal';
@@ -28,7 +29,7 @@ const Hero: React.FC = () => {
           
           <Reveal delay={200}>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
-              BCA student at K.P.B. Hinduja College & BS Data Science at IIT Madras. Specializing in MERN Stack development with a passion for creating elegant, functional web applications.
+              BS Data Science at IIT Madras with a complementary BCA at K.P.B. Hinduja College. Specializing in MERN Stack development with a focus on creating sophisticated, high-performance web applications.
             </p>
           </Reveal>
           
@@ -66,9 +67,10 @@ const Hero: React.FC = () => {
         </div>
       </div>
       
+      {/* Scroll down button - only visible on larger screens */}
       <a 
         href="#about" 
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-muted-foreground hover:text-foreground transition-all-200"
+        className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center text-muted-foreground hover:text-foreground transition-all-200"
       >
         <span className="text-sm mb-2">Scroll Down</span>
         <ArrowDown className="animate-bounce" size={20} />

@@ -6,28 +6,28 @@ import TimelineItem from './ui/TimelineItem';
 const Experience: React.FC = () => {
   const experiences = [
     {
-      date: "2023 - 2026",
-      title: "Bachelor of Computer Applications (BCA)",
-      company: "K.P.B. Hinduja College of Commerce",
-      description: "Pursuing Computer Science with a focus on application development and programming fundamentals. Developing strong technical foundation in computer science principles."
-    },
-    {
       date: "2024 - 2028",
       title: "Bachelor of Science - BS",
       company: "Indian Institute of Technology, Madras",
-      description: "Specializing in Data Science and Applications. Started in September 2024 with expected graduation in 2028. Learning advanced concepts in data science, machine learning, and statistical analysis."
+      description: "Pursuing Data Science and Applications with a focus on advanced analytical methodologies. Commenced in September 2024 with anticipated completion in 2028. Developing expertise in data science frameworks, machine learning algorithms, and statistical analysis techniques."
+    },
+    {
+      date: "2023 - 2026",
+      title: "Bachelor of Computer Applications (BCA)",
+      company: "K.P.B. Hinduja College of Commerce",
+      description: "Supplementary degree in Computer Science focusing on application development and programming fundamentals. Establishing a comprehensive foundation in computer science principles to complement data science specialization."
     },
     {
       date: "2023 - Present",
       title: "MERN Stack Development",
       company: "Self-learning & Projects",
-      description: "Mastering the MERN (MongoDB, Express.js, React.js, Node.js) stack through intensive self-study and practical project implementation. Building full-stack web applications with focus on functionality and user experience."
+      description: "Mastering the MERN (MongoDB, Express.js, React.js, Node.js) stack through systematic self-study and practical implementation. Developing full-stack web applications with emphasis on scalability, performance optimization, and enhanced user experience."
     },
     {
       date: "2022 - 2023",
       title: "Frontend Web Development",
       company: "Self-learning & Projects",
-      description: "Completed intensive learning in HTML, CSS, and JavaScript. Mastered popular frontend frameworks such as Bootstrap and Tailwind CSS to create responsive and visually appealing web applications."
+      description: "Completed comprehensive training in HTML, CSS, and JavaScript fundamentals. Acquired proficiency in industry-standard frontend frameworks including Bootstrap and Tailwind CSS for developing responsive and visually refined web interfaces."
     }
   ];
 
@@ -36,7 +36,7 @@ const Experience: React.FC = () => {
       <div className="container">
         <SectionHeading 
           title="Education & Experience"
-          subtitle="My academic and learning journey"
+          subtitle="Academic qualifications and professional development"
           className="mb-12"
         />
         

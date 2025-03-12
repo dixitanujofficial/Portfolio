@@ -10,7 +10,7 @@ const About: React.FC = () => {
       <div className="container">
         <SectionHeading 
           title="About Me"
-          subtitle="Get to know me better"
+          subtitle="Professional background and expertise"
         />
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -36,13 +36,13 @@ const About: React.FC = () => {
             
             <Reveal delay={200}>
               <p className="text-muted-foreground mb-4">
-                I'm passionate about web development, currently pursuing a Bachelor of Computer Applications (BCA) at K.P.B. Hinduja College of Commerce (Mumbai) and a Bachelor of Science in Data Science and Applications at IIT Madras.
+                As an aspiring technologist, I am currently pursuing a Bachelor of Science in Data Science and Applications at the prestigious Indian Institute of Technology, Madras, complemented by a Bachelor of Computer Applications at K.P.B. Hinduja College of Commerce, Mumbai.
               </p>
             </Reveal>
             
             <Reveal delay={300}>
               <p className="text-muted-foreground mb-6">
-                I've completed an intensive learning journey in frontend web development, mastering HTML, CSS, and JavaScript along with frameworks like Bootstrap and Tailwind CSS. Currently focusing on backend development with the MERN stack (MongoDB, Express.js, React.js, Node.js), I aim to build seamless full-stack applications that prioritize functionality and user experience.
+                My professional development journey encompasses systematic training in frontend web technologies, including advanced proficiency in HTML, CSS, and JavaScript, along with modern frameworks such as Bootstrap and Tailwind CSS. Currently, I am focusing on mastering the MERN stack (MongoDB, Express.js, React.js, Node.js) to develop comprehensive full-stack applications that prioritize performance, scalability, and exceptional user experience.
               </p>
             </Reveal>
             
@@ -54,9 +54,9 @@ const About: React.FC = () => {
                   <p><strong>Location:</strong> Mumbai, Maharashtra, India</p>
                 </div>
                 <div>
-                  <p className="mb-1"><strong>Education:</strong> BCA & BS Data Science</p>
-                  <p className="mb-1"><strong>Focus:</strong> MERN Stack Development</p>
-                  <p><strong>Availability:</strong> Projects/Internships</p>
+                  <p className="mb-1"><strong>Education:</strong> BS Data Science, BCA</p>
+                  <p className="mb-1"><strong>Specialization:</strong> MERN Stack Development</p>
+                  <p><strong>Availability:</strong> Projects & Internships</p>
                 </div>
               </div>
             </Reveal>
