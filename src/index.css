@@ -102,3 +102,14 @@
   
   .text-balance { text-wrap: balance; }
 }
+
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  
+  /* Make sure links and buttons don't force the pointer cursor to come back */
+  a, button, input, select, textarea {
+    cursor: none !important;
+  }
+}
