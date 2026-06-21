@@ -1,100 +1,36 @@
-
 import React from 'react';
 import SectionHeading from './ui/SectionHeading';
-import ProgressBar from './ui/ProgressBar';
 import Reveal from './ui/Reveal';
-import { CheckCircle2 } from 'lucide-react';
 
 const Skills: React.FC = () => {
-  const technicalSkills = [
-    { label: "JavaScript", percentage: 90 },
-    { label: "React.js", percentage: 85 },
-    { label: "Node.js", percentage: 85 },
-    { label: "MongoDB", percentage: 80 },
-    { label: "Express.js", percentage: 85 },
-    { label: "HTML/CSS", percentage: 90 },
-    { label: "C++", percentage: 85 },
-    { label: "Tailwind CSS", percentage: 90 },
-    { label: "Bootstrap", percentage: 85 },
-    { label: "Full Stack Development", percentage: 85 },
-  ];
-
-  const softSkills = [
-    "Communication",
-    "Problem Solving",
-    "Team Collaboration",
-    "Leadership",
-    "Time Management",
-    "Critical Thinking",
-    "Adaptability"
-  ];
-
-  const learningTechnologies = [
-    "Artificial Intelligence",
-    "Large Language Models",
-    "Machine Learning",
-    "Natural Language Processing",
-    "Data Science Fundamentals",
-    "AI Application Development"
+  const skillCategories = [
+    { title: "Frontend", skills: ["React.js", "Next.js", "HTML5/CSS3", "Tailwind CSS", "Bootstrap"] },
+    { title: "Backend", skills: ["Node.js", "Express.js", "RESTful APIs"] },
+    { title: "Languages", skills: ["JavaScript (ES6+)", "TypeScript", "Python", "C++", "SQL"] },
+    { title: "Database & Cloud", skills: ["MongoDB", "PostgreSQL", "AWS", "GCP (Learning)"] },
+    { title: "AI & Tools", skills: ["LLM Integration", "Git/GitHub", "Linux", "VS Code"] }
   ];
 
   return (
-    <section id="skills" className="section-padding bg-secondary/50">
+    <section id="skills" className="section-padding bg-background relative z-10">
       <div className="container">
-        <SectionHeading 
-          title="Skills & Expertise"
-          subtitle="My technical and soft skills"
-        />
+        <SectionHeading eyebrow="Capabilities" title="Technical Arsenal" />
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Technical Skills */}
-          <Reveal>
-            <div className="bg-card rounded-lg p-6 subtle-shadow">
-              <h3 className="text-xl font-bold mb-6">Technical Skills</h3>
-              <div className="space-y-5">
-                {technicalSkills.map((skill, index) => (
-                  <ProgressBar
-                    key={index}
-                    label={skill.label}
-                    percentage={skill.percentage}
-                  />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-16">
+          {skillCategories.map((category, idx) => (
+            <Reveal key={idx} delay={idx * 100}>
+              <h3 className="text-xl font-display font-semibold mb-6 border-b border-border/50 pb-4 text-foreground">
+                {category.title}
+              </h3>
+              <ul className="flex flex-col gap-4">
+                {category.skills.map((skill, i) => (
+                  <li key={i} className="text-muted-foreground font-mono text-sm flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 bg-primary rounded-full"></span> {skill}
+                  </li>
                 ))}
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Soft Skills & Currently Learning */}
-          <div className="space-y-8">
-            {/* Soft Skills */}
-            <Reveal delay={200}>
-              <div className="bg-card rounded-lg p-6 subtle-shadow">
-                <h3 className="text-xl font-bold mb-6">Soft Skills</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {softSkills.map((skill, index) => (
-                    <div key={index} className="flex items-center gap-2">
-                      <CheckCircle2 className="text-primary" size={18} />
-                      <span>{skill}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              </ul>
             </Reveal>
-
-            {/* Currently Learning */}
-            <Reveal delay={400}>
-              <div className="bg-card rounded-lg p-6 subtle-shadow">
-                <h3 className="text-xl font-bold mb-6">Currently Learning</h3>
-                <div className="space-y-3">
-                  {learningTechnologies.map((tech, index) => (
-                    <div key={index} className="flex items-center gap-2">
-                      <div className="h-2 w-2 rounded-full bg-primary"></div>
-                      <span>{tech}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
-          </div>
+          ))}
         </div>
       </div>
     </section>

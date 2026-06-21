@@ -1,4 +1,3 @@
-
 import React from 'react';
 import SectionHeading from './ui/SectionHeading';
 import ProjectCard from './ui/ProjectCard';
@@ -6,56 +5,33 @@ import ProjectCard from './ui/ProjectCard';
 const Projects: React.FC = () => {
   const projects = [
     {
-      title: "Wanderlust",
-      description: "A cutting-edge travel platform inspired by Airbnb. Features include secure authentication, map integration, MVC architecture, and intuitive UI built with MongoDB, Express.js, Node.js, and Bootstrap.",
-      image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop",
-      tags: ["MongoDB", "Express.js", "Node.js", "Bootstrap", "MVC"],
-      demoLink: "https://wanderlust-1isu.onrender.com/listings",
-      githubLink: "#"
+      title: "AgriSmart Analytics",
+      description: "A full-stack agricultural web application integrating AI-powered recommendation workflows to improve decision support. Built with a responsive dashboard for real-time agricultural insights, data-processing workflows, and scalable API architecture.",
+      tags: ["React.js", "Node.js", "Express.js", "MongoDB", "REST APIs"],
+      demoLink: "https://agrismart-delta-five.vercel.app",
+      githubLink: "https://github.com/dixitanujofficial"
     },
     {
-      title: "Coming Soon",
-      description: "An exciting new project currently in development. Stay tuned for updates on this innovative solution.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2070&auto=format&fit=crop",
-      tags: ["React", "Next.js", "TypeScript"],
-      isComingSoon: true
-    },
-    {
-      title: "Coming Soon",
-      description: "Another innovative project on the horizon. More details will be revealed in the near future.",
-      image: "https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81?q=80&w=2080&auto=format&fit=crop",
-      tags: ["MERN Stack", "Tailwind CSS"],
-      isComingSoon: true
-    },
-    {
-      title: "Coming Soon",
-      description: "A futuristic application currently under construction. Watch this space for the official launch.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
-      tags: ["React", "Firebase", "Material UI"],
-      isComingSoon: true
+      title: "Wanderlust Rentals",
+      description: "A secure full-stack property rental platform featuring authentication, authorization, and modular MVC architecture. Implemented RESTful APIs supporting CRUD operations, search functionality, and seamless booking workflows.",
+      tags: ["MongoDB", "Express.js", "React.js", "Node.js"],
+      demoLink: "https://wanderlust-lisu.onrender.com",
+      githubLink: "https://github.com/dixitanujofficial"
     }
   ];
 
   return (
-    <section id="projects" className="section-padding bg-background">
+    <section id="projects" className="section-padding bg-background relative z-10">
       <div className="container">
         <SectionHeading 
-          title="Featured Projects"
-          subtitle="My recent work and upcoming initiatives"
+          eyebrow="Selected Work" 
+          title="Projects & Engineering" 
+          subtitle="Showcasing full-stack MERN development and AI integrations."
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              description={project.description}
-              image={project.image}
-              tags={project.tags}
-              demoLink={project.demoLink}
-              githubLink={project.githubLink}
-              isComingSoon={project.isComingSoon}
-            />
+        <div className="mt-16 flex flex-col gap-16 md:gap-24">
+          {projects.map((proj, idx) => (
+            <ProjectCard key={idx} {...proj} />
           ))}
         </div>
       </div>

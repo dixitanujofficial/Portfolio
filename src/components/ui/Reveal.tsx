@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import { cn } from '@/lib/utils';
+import React from 'react';
+import { motion, useReducedMotion, type Variants } from 'framer-motion';
+
 interface RevealProps {
   children: React.ReactNode;
   className?: string;
@@ -9,77 +10,37 @@ interface RevealProps {
   once?: boolean;
   threshold?: number;
 }
+
+const OFFSET = 24;
+
+const getInitial = (direction: RevealProps['direction']) => {
+  switch (direction) {
+    case 'up': return { y: OFFSET, x: 0 };
+    case 'down': return { y: -OFFSET, x: 0 };
+    case 'left': return { x: OFFSET, y: 0 };
+    case 'right': return { x: -OFFSET, y: 0 };
+    default: return { x: 0, y: 0};
+  }
+};
+
 export const Reveal: React.FC<RevealProps> = ({
-  children,
-  className,
-  direction = 'up',
-  delay = 0,
-  duration = 500,
-  once = true,
-  threshold = 0.1
+  children, className, direction = 'up', delay = 0, duration = 0.6, once = true, threshold = 0.1,
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const hasAnimated = useRef(false);
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && (!once || !hasAnimated.current)) {
-          element.style.opacity = '1';
-          element.style.transform = 'translate(0, 0)';
-          hasAnimated.current = true;
-        } else if (!entry.isIntersecting && !once && hasAnimated.current) {
-          element.style.opacity = '0';
-          switch (direction) {
-            case 'up':
-              element.style.transform = 'translateY(20px)';
-              break;
-            case 'down':
-              element.style.transform = 'translateY(-20px)';
-              break;
-            case 'left':
-              element.style.transform = 'translateX(20px)';
-              break;
-            case 'right':
-              element.style.transform = 'translateX(-20px)';
-              break;
-            case 'none':
-              element.style.transform = 'none';
-              break;
-          }
-          hasAnimated.current = false;
-        }
-      });
-    }, {
-      threshold
-    });
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, [direction, once, threshold]);
-  const getInitialTransform = () => {
-    switch (direction) {
-      case 'up':
-        return 'translateY(20px)';
-      case 'down':
-        return 'translateY(-20px)';
-      case 'left':
-        return 'translateX(20px)';
-      case 'right':
-        return 'translateX(-20px)';
-      case 'none':
-        return 'none';
-      default:
-        return 'translateY(20px)';
-    }
+  const shouldReduceMotion = useReducedMotion();
+  const initialOffset = getInitial(direction);
+
+  const variants: Variants = {
+    hidden: shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: initialOffset.x, y: initialOffset.y },
+    visible: {
+      opacity: 1, x: 0, y: 0,
+      transition: { duration: shouldReduceMotion ? 0.3 : duration, delay: delay / 1000, ease: [0.16, 1, 0.3, 1] },
+    },
   };
-  return <div ref={ref} style={{
-    opacity: 0,
-    transform: getInitialTransform(),
-    transition: `opacity ${duration}ms ease, transform ${duration}ms ease`,
-    transitionDelay: `${delay}ms`
-  }} className="">
+
+  return (
+    <motion.div className={className} initial="hidden" whileInView="visible" viewport={{ once, amount: threshold }} variants={variants}>
       {children}
-    </div>;
+    </motion.div>
+  );
 };
 export default Reveal;
