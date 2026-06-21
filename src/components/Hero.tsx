@@ -85,8 +85,8 @@ const Hero: React.FC = () => {
             style={{ opacity: fadeOpacity, y: parallaxY }} 
             className="container relative z-10 flex flex-col lg:flex-row items-stretch justify-between min-h-screen pt-24"
           >
-            {/* Left Side: Text & Skills */}
-            <div className="w-full lg:w-[55%] order-2 lg:order-1 flex flex-col justify-center pb-20 lg:pb-32 z-20">
+            {/* Left Side: Text & Skills (Kept at higher z-index to sit above mobile orbit bg) */}
+            <div className="w-full lg:w-[55%] order-2 lg:order-1 flex flex-col justify-center pb-20 lg:pb-32 z-20 min-h-[70vh] lg:min-h-0">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -124,20 +124,23 @@ const Hero: React.FC = () => {
 
             {/* Right Side: Portrait & NEURAL ORBIT */}
             <motion.div 
-              className="w-full lg:w-[45%] order-1 lg:order-2 flex justify-center lg:justify-end items-end h-[45vh] lg:h-auto mt-10 lg:mt-0 relative"
+              // Absolute on mobile to sit perfectly behind text. Relative on desktop.
+              className="absolute inset-0 lg:relative lg:inset-auto w-full lg:w-[45%] lg:order-2 flex justify-center lg:justify-end items-center lg:items-end h-full lg:h-auto mt-0 lg:mt-0 z-0 lg:z-10 pointer-events-none lg:pointer-events-auto overflow-hidden lg:overflow-visible"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
               
-              <div className="relative w-full max-w-[420px] lg:max-w-[600px] flex flex-col justify-end z-10">
+              <div className="relative w-full max-w-[420px] lg:max-w-[600px] flex flex-col justify-center lg:justify-end z-10 h-full lg:h-auto">
                 
-                {/* MOVED UP: Adjusted top positioning here */}
-<div className="absolute top-[-5%] lg:top-[2%] left-[60%] -translate-x-1/2 w-[115%] lg:w-[110%] aspect-square hidden lg:flex items-center justify-center z-0 pointer-events-none">                  <div className="relative w-full h-full">
+                {/* 2D NEURAL ORBIT - Adjusted sm:w-[90vw] and md:w-[80vw] to fit beautifully on tablets */}
+                <div className="absolute top-1/2 lg:top-[2%] left-1/2 lg:left-[60%] -translate-x-1/2 -translate-y-1/2 lg:translate-y-0 w-[150vw] sm:w-[90vw] md:w-[80vw] lg:w-[110%] aspect-square flex items-center justify-center z-0 pointer-events-none opacity-15 lg:opacity-100 shrink-0">
+                  <div className="relative w-full h-full ">
                     
                     <motion.div animate={{ rotate: 360 }} transition={{ duration: 45, repeat: Infinity, ease: "linear" }} className="w-full h-full relative">
                       
-                      <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="visible">
+                      {/* Added preserveAspectRatio="xMidYMid meet" to force perfect circular rendering */}
+                      <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
                         {connections.map((c, i) => (
                           <motion.line
                             key={i} x1={c.x1} y1={c.y1} x2={c.x2} y2={c.y2}
@@ -148,13 +151,11 @@ const Hero: React.FC = () => {
                       </svg>
 
                       {nodes.map((node, i) => (
-                        // FIX 1: Wrapper div handles precise positioning natively so Framer Motion doesn't override it
                         <div 
                           key={i} 
                           className="absolute z-10"
                           style={{ top: node.top, left: node.left, transform: 'translate(-50%, -50%)' }}
                         >
-                          {/* FIX 2: Framer motion only handles scale and visual styling inside the wrapper */}
                           <motion.div
                             className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-background border border-primary/30 flex items-center justify-center shadow-[0_0_20px_rgba(232,85,31,0.15)]"
                             initial={{ scale: 0 }} 
@@ -171,16 +172,19 @@ const Hero: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="absolute top-[10%] bottom-[5%] left-[10%] right-[5%] bg-primary/15 blur-[120px] rounded-[100%] z-0 pointer-events-none" />
+                {/* Hide the glow blob on mobile to keep the bg clean */}
+                <div className="hidden lg:block absolute top-[10%] bottom-[5%] left-[10%] right-[5%] bg-primary/15 blur-[120px] rounded-[100%] z-0 pointer-events-none" />
                 
+                {/* PORTRAIT IMAGE - Hidden on mobile, visible on desktop */}
                 <img
                   src="/imgs/anuj-portrait.png" 
                   alt="Anuj Dixit"
-                  className="w-full h-auto object-contain object-bottom drop-shadow-2xl relative z-10 origin-bottom scale-110 pointer-events-none"
+                  className="hidden lg:block w-full h-auto object-contain object-bottom drop-shadow-2xl relative z-10 origin-bottom scale-110 pointer-events-none"
                 />
               </div>
             </motion.div>
 
+            {/* Scroll Indicator */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
